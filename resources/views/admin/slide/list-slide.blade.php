@@ -11,7 +11,7 @@
     <div class="card mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered table-striped" id="dataTable" width="100%" style="font-size: 14px;text-align: center" >
+                <table class="table table-bordered table-striped" id="datatable" width="100%" style="font-size: 14px;text-align: center" >
                     <thead>
                         <tr align="center">
                             <th>Mã Slide</th>

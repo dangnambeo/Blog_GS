@@ -46,6 +46,7 @@
             </div>
 
             <form class="login100-form validate-form" action="{{ route('post-login') }}" method="POST">
+                {{ csrf_field() }}
                 <div class="wrap-input100 validate-input m-b-26" data-validate="Không được để trống ô này">
                     <span class="label-input100">Tên đăng nhập</span>
                     <input class="input100" type="text" name="user_name" placeholder="">
@@ -58,7 +59,7 @@
                     <span class="focus-input100"></span>
                 </div>
                 <div class="container-login100-form-btn">
-                    <button type="submit" name="submit" class="login100-form-btn">
+                    <button type="submit" class="login100-form-btn">
                         Đăng nhập
                     </button>
                 </div>
@@ -83,7 +84,7 @@
     <script src="{{ asset('admin_asset/login/vendor/countdowntime/countdowntime.js') }}"></script>
     <!--===============================================================================================-->
     <script src="{{ asset('admin_asset/login/js/main.js') }}"></script>
-
+    @include('sweetalert::alert')
 </body>
 
 </html>

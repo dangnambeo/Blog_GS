@@ -22,7 +22,6 @@
                   <div class="form-group">
                     <label>Thứ Tự</label>
                     <select class="form-control" name=" ordinal">
-                        <option>-----</option>
                         <option value="0">top</option>
                         <option value="1">second</option>
                       </select>
@@ -30,7 +29,6 @@
                   <div class="form-group">
                       <label>Trạng Thái</label>
                       <select class="form-control" name=" status">
-                        <option>-----</option>
                         <option value="0">Ẩn</option>
                         <option value="1">Hiện</option>
                       </select>

@@ -4,9 +4,7 @@
 @section('content')
     <div class="container-fluid">
         <h1 class="mt-4">Sửa Người Dùng</h1>
-        <div class="card mb-4">
-            <div class="card-body"></div>
-        </div>
+
         <div class="card mb-4">
             <div class="card-body" style="margin: 20px">
                 <form action="{{ route('postEditUser', $user->user_id) }}" method="POST" enctype="multipart/form-data">
@@ -20,19 +18,19 @@
                         <label>Tạo Tên Đăng Nhập:</label>
                         <input class="form-control" name="user_name" type="text" value="{{ $user->user_name }}">
                     </div>
-                    <div class="form-group">
-                        <label>Ảnh Đại diện:</label>
-                        <div class="img-avatar">
-                            <img class="avatar" src="{{ $user->avatar }}">
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="avatar">
+                    <div class="form-group row">
+                        <div class="col-md-5">
+                            <label class="control-label" for="avatar">Ảnh đại diện:</label>
+                            <input type="file" name="avatar" id="avatar" class="dropify"
+                                data-default-file="{{ asset($user->avatar) }}">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Cấp Quản Lý:</label>
-                        <select class="form-control" name=" level">
-                            <option {{ $user->level == 0 ? ' selected' : '' }} value="0">Admin</option>
-                            <option {{ $user->level == 1 ? ' selected' : '' }} value="1">Bloger</option>
-                        </select>
+                        <div class="col-md-7">
+                            <label>Cấp Quản Lý:</label>
+                            <select class="form-control select2" name=" level">
+                                <option {{ $user->level == 0 ? ' selected' : '' }} value="0">Admin</option>
+                                <option {{ $user->level == 1 ? ' selected' : '' }} value="1">Bloger</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group">
                         <input type="checkbox" id="change_pass" name="change_pass">
@@ -66,6 +64,5 @@
                 }
             });
         });
-
     </script>
 @endsection

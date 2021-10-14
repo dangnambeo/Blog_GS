@@ -3,12 +3,8 @@
 @section('tittle', 'Quản lí Người Dùng')
 @section('content')
     <div class="container-fluid">
-        <h1 class="mt-4">@yield('tittle') <span>|</span> <a class="user-add"
-                href="{{ route('AddUser') }}"><i class="fas fa-user-plus"></i></a></h1>
-        <div class="card mb-4">
-            <div class="card-body">
-            </div>
-        </div>
+        <h1 class="mt-4">@yield('tittle')</h1>
+
         <div class="card mb-4">
             <div class="card-body">
                 <div class="table-responsive">
@@ -40,7 +36,9 @@
                                         @if ($list->avatar == null)
                                             <p style="color: red;font-weight: bold">Bạn chưa thêm ảnh đại diện</p>
                                         @else
-                                            <img class="avatar" src="{{ $list->avatar }}">
+                                            <img class="rounded" alt="64x64" src="{{ asset($list->avatar) }}"
+                                                style="width: 100px; height: 66px;">
+
                                         @endif
                                     </td>
                                     <td>
@@ -52,21 +50,17 @@
                                         @endif
                                     </td>
                                     <td style="text-align: center">
-
                                         <a class="btn btn-facebook waves-effect waves-light btn-xs"
-                                           href="{{ route('xuat_sp',$sp->ID) }}">
+                                            href="{{ route('EditUser', $list->user_id) }}">
                                             <i class="typcn typcn-edit"></i> Sửa
                                         </a>
-                                        <a class="btn btn-pinterest waves-effect waves-light btn-xs delete" href="{{ route('del_sp', $sp->ID) }}"
-                                           data-confirm="Bạn có muốn xóa sinh phẩm?">
+                                        <a class="btn btn-pinterest waves-effect waves-light btn-xs delete"
+                                            href="{{ route('DelUser', $list->user_id) }}"
+                                            data-confirm="Bạn có muốn xóa người dùng">
                                             <i class=" typcn typcn-times"></i> Xóa
                                         </a>
                                     </td>
-                                    <td><a href="{{ route('EditUser', $list->user_id) }}" class="btn btn-link"><i
-                                                style="font-size: 20px;color: #00b3ee" class="fas fa-edit"></i></a></td>
-                                    <td><a href="{{ route('DelUser', $list->user_id) }}" class="btn btn-link" href=""><i
-                                                style="font-size: 20px;color: red" class="fas fa-calendar-times"></i></a>
-                                    </td>
+
                                 </tr>
                                 <?php $i++; ?>
                             @endforeach
@@ -76,4 +70,15 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        $('.delete').on("click", function(e) {
+            e.preventDefault();
+            var choice = confirm($(this).attr('data-confirm'));
+            if (choice) {
+                window.location.href = $(this).attr('href');
+            }
+        });
+    </script>
 @endsection

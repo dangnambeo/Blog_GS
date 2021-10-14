@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Celendar | Zircos - Responsive Bootstrap 4 Admin Dashboard</title>
+    <title>@yield('tittle')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Responsive bootstrap 4 admin template" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -156,11 +156,11 @@
             <div class="logo-box">
                 <a href="#" class="logo text-center">
                     <span class="logo-lg">
-                        <img src="{{ asset('admin_asset/images/logo.png') }}" alt="" height="18">
+                        <img src="{{ asset('images/logo.png') }}" alt="" height="60">
 
                     </span>
                     <span class="logo-sm">
-                        <span class="logo-sm-text-dark">HIV</span>
+                        <span class="logo-sm-text-dark">BLOG-GS</span>
                     </span>
                 </a>
             </div>
@@ -211,7 +211,12 @@
                                 <span> Quản Lý Bài Viết</span>
                             </a>
                         </li>
-
+                        <li>
+                            <a href="{{ route('list-cate') }}" class="waves-effect waves-light">
+                                <i class="  ion ion-md-cube"></i>
+                                <span> Quản Lý Chuyên mục</span>
+                            </a>
+                        </li>
                         <li>
                             <a href="{{ route('list-type') }}" class="waves-effect waves-light">
                                 <i class="fas fa-globe-africa"></i>
@@ -278,7 +283,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            2021 &copy; QuanLySinhPham
+                            2021 &copy; BLOG-GS
                         </div>
                     </div>
                 </div>
@@ -353,6 +358,12 @@
     <!--SweetAlert-->
 
     <script src="{{ asset('admin_asset/js/pages/form-advanced.init.js') }}"></script>
+
+    <script src="{{ asset('admin_asset/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
+    <script>
+        CKEDITOR.replace('ckeditor');
+        CKEDITOR.replace('ckeditor1');
+    </script>
 
     <!-- App js -->
     <script src="{{ asset('admin_asset/js/app.js') }}"></script>

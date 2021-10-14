@@ -97,8 +97,9 @@ class UserController extends Controller
     public function DeleteUser($user_id)
     {
         $user = User::find($user_id);
+        alert()->toast('Xóa người dùng thành công', 'delete')->autoClose(1200);
         $user->delete();
-        return redirect(route('list-user'));
+        return back();
     }
     public function getSignUp()
     {
@@ -144,10 +145,10 @@ class UserController extends Controller
 
         if (Auth::attempt(['user_name' => $user_name, 'password' => $password])) {
             alert()->toast('Đăng nhập thành công', 'success')->persistent(false)->autoClose(1200);
-            return redirect(route('list-post'));
+            return redirect(route('home'));
         } else {
-            alert()->error('Error!!', 'Bạn Đã Nhập Sai Tên Đăng Nhập Hoặc Mật Khẩu Mời nhập lại');
-            return redirect()->back();
+            alert()->toast('Bạn đã nhập sai tên đăng nhập hoặc mật khẩu', 'error')->persistent(false)->autoClose(5000);
+            return back();
             //return redirect(route('login'));
             //with('mess','Bạn Đã Nhập Sai Tên Đăng Nhập Hoặc Mật Khẩu Mời nhập lại');
         }
