@@ -14,7 +14,7 @@
                  </div>
                  <div class="form-group">
                     <label>Chọn Chuyên Mục:</label>
-                    <select class="form-control" name="cate_id">
+                    <select class=" select2 form-control" name="cate_id">
                         <option value="">--Chọn Chuyên Mục--</option>
                         @foreach ($cate as $cate)
                             <option value="{{$cate->cate_id}}">{{$cate->cate_tittle}}</option>

@@ -1,14 +1,12 @@
 @extends('admin.layout.master')
 @extends('admin.layout.header')
-@section('tittle', 'Danh sách bài viết')
+@section('tittle', 'Quản lý bài viết')
 @section('content')
     <div class="container-fluid">
-        <h1 class="mt-4">@yield('tittle') <span>|</span> <a class="user-add"
-                href="{{ route('AddPost') }}"><img class="" src="icon/blogadd_icon.png" alt=""></a></h1>
-        <div class="card mb-4">
-            <div class="card-body">
-            </div>
-        </div>
+        <h1 class="mt-4">
+            @yield('tittle')
+        </h1>
+
         <div class="card mb-4 post">
             <div class="card-body">
                 <div class="table-responsive">
@@ -19,7 +17,7 @@
                                 <th>Mã Bài Viết</th>
                                 <th>Tiêu Đề</th>
                                 <th>Ảnh</th>
-                                <th>Nội Dung Ngắn</th>
+
                                 <th>Tin Nổi Bật</th>
                                 <th>Chuyên Mục</th>
                                 <th>Loại Tin</th>
@@ -49,7 +47,7 @@
 
                                         @endif
                                     </td>
-                                    <td class="custom-text">{!! $list_post->short_content !!}</td>
+
                                     <td>
                                         @if ($list_post->hot_news == 1)
                                             <i style="font-size: 20px;color: #f1c40f" class="far fa-star"></i>

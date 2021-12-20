@@ -17,7 +17,7 @@ class CreateTypecateTable extends Migration
             $table->bigIncrements('type_id');
             $table->string('type_tittle',150);
             $table->string('ordinal_type',50)->nullable();
-            $table->string('cate_id',50)->nullable();
+            $table->bigInteger('cate_id')->nullable();
             $table->timestamps();
         });
     }

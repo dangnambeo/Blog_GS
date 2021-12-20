@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
 @extends('admin.layout.header')
-@section('tittle', 'Danh sách chuyên mục')
+@section('tittle', 'Quản lý chuyên mục')
 
 @section('content')
     <div class="container-fluid">

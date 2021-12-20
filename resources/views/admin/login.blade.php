@@ -1,90 +1,63 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-
 <head>
-    <title>Login V15</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
+    <title>Login 05</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('admin_asset/login/vendor/bootstrap/css/bootstrap.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('admin_asset/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('admin_asset/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin_asset/login/vendor/animate/animate.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('admin_asset/login/vendor/css-hamburgers/hamburgers.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('admin_asset/login/vendor/animsition/css/animsition.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin_asset/login/vendor/select2/select2.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('admin_asset/login/vendor/daterangepicker/daterangepicker.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin_asset/login/css/util.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin_asset/login/css/main.css') }}">
-    <!--===============================================================================================-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{{ asset("admin_asset/login/css/style.css") }}">
+
 </head>
-
 <body>
+<section class="ftco-section">
+    <div class="container">
 
-    <div class="container-login100">
-        <div class="wrap-login100">
-            <div class="login100-form-title" style="background-image: url(images/blog.jpg);">
-                <span class="login100-form-title-1">
-                    Đăng nhập
-                </span>
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <div class="wrap">
+                    <div class="img" style="background-image: url({{ asset("images/blog.jpg") }});"></div>
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Đăng Nhập</h3>
+                            </div>
+
+                        </div>
+                        <form action="{{ route('post-login') }}" method="POST" class="signin-form">
+                            {{ csrf_field() }}
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" id="username" name="user_name" required>
+                                <label class="form-control-placeholder" for="username">Tên đăng nhập</label>
+                            </div>
+                            <div class="form-group">
+                                <input id="password-field" type="password" name="password" class="form-control" required>
+                                <label class="form-control-placeholder" for="password-field">Mật khẩu</label>
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+                            </div>
+                        </form>
+                        @if(count($users) <= 0)
+                            <p class="text-center">Chưa có tài khoản <a href="{{ route("dangki") }}">Tạo tài khoản</a></p>
+                        @endif
+                    </div>
+                </div>
             </div>
-
-            <form class="login100-form validate-form" action="{{ route('post-login') }}" method="POST">
-                {{ csrf_field() }}
-                <div class="wrap-input100 validate-input m-b-26" data-validate="Không được để trống ô này">
-                    <span class="label-input100">Tên đăng nhập</span>
-                    <input class="input100" type="text" name="user_name" placeholder="">
-                    <span class="focus-input100"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input m-b-18" data-validate="Không được để trống ô này">
-                    <span class="label-input100">Mật khẩu</span>
-                    <input class="input100" type="password" name="password" placeholder="">
-                    <span class="focus-input100"></span>
-                </div>
-                <div class="container-login100-form-btn">
-                    <button type="submit" class="login100-form-btn">
-                        Đăng nhập
-                    </button>
-                </div>
-            </form>
         </div>
     </div>
-    </div>
+</section>
 
-    <!--===============================================================================================-->
-    <script src="{{ asset('admin_asset/login/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
-    <!--===============================================================================================-->
-    <script src="{{ asset('admin_asset/login/vendor/animsition/js/animsition.min.js') }}"></script>
-    <!--===============================================================================================-->
-    <script src="{{ asset('admin_asset/login/vendor/bootstrap/js/popper.js') }}"></script>
-    <script src="{{ asset('admin_asset/login/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-    <!--===============================================================================================-->
-    <script src="{{ asset('admin_asset/login/vendor/select2/select2.min.js') }}"></script>
-    <!--===============================================================================================-->
-    <script src="{{ asset('admin_asset/login/vendor/daterangepicker/moment.min.js') }}"></script>
-    <script src="{{ asset('admin_asset/login/vendor/daterangepicker/daterangepicker.js') }}"></script>
-    <!--===============================================================================================-->
-    <script src="{{ asset('admin_asset/login/vendor/countdowntime/countdowntime.js') }}"></script>
-    <!--===============================================================================================-->
-    <script src="{{ asset('admin_asset/login/js/main.js') }}"></script>
-    @include('sweetalert::alert')
+<script src="{{ asset("admin_asset/login/js/jquery.min.js") }}"></script>
+<script src="{{ asset("admin_asset/login/js/popper.js") }}"></script>
+<script src="{{ asset("admin_asset/login/js/bootstrap.min.js") }}"></script>
+<script src="{{ asset("admin_asset/login/js/main.js") }}"></script>
+@include('sweetalert::alert')
 </body>
-
 </html>
+

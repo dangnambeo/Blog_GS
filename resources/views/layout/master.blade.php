@@ -1,40 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="{{asset('')}}" >
-    <link rel="shortcut icon" href="{{asset('/') }}/images/blog.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="{{asset('/')}}/FE_asset/css/style.css">
-    <link rel="stylesheet" href="{{asset('/')}}/FE_asset/fonts/css/all.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <link href='https://fonts.googleapis.com/css?family=Shadows Into Light' rel='stylesheet'>
-    <title>@yield('title')</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog GS</title>
+    <!-- Style -->
+
+    <link rel="stylesheet" href="{{ asset("FE_asset/css/style.css") }}" />
+
+    <!-- Style -->
+
+    <!--fontaweesome-->
+    <link rel="stylesheet" href="{{ asset("FE_asset/fontawesome/css/all.css") }}" />
+    <!--fontaweesome-->
+
+    <!--Bootstrap-->
+
+    <link rel="stylesheet" href="{{ asset("FE_asset/bootstrap/css/bootstrap.min.css") }}" />
+    <script src="{{ asset("FE_asset/bootstrap/js/bootstrap.js") }}"></script>
+    <script src="{{ asset("FE_asset/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+
+    <!--Bootstrap-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap" rel="stylesheet"/>
 </head>
 <body class="body">
+<!-- Header -->
 
-    <section class="section">
-    @yield('banner')
-     @yield('content')
-    </section><!--section-->
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6">
-                    <script>document.write(new Date().getFullYear())</script> Copyright &copy;
-                </div>
-                <div class="col-sm-6">
-                    <div class="text-sm-right d-none d-sm-block">
-                      <a href="{{ route('index') }}">Privacy Policy</a>
-                    &middot;
-                    <a href="{{ route('index') }}">Terms &amp; Conditions</a>
-                    </div>
+
+
+<!-- End -->
+
+<div class="clean"></div>
+
+<section class="section">
+    <div class="section-main">
+        <div class="featured-post">
+            <div class="featured-header">
+                <h2>Bài Nổi Bật</h2>
+            </div>
+            <div class="featured-content hover-post">
+                <a href="#">
+                    <img src="{{ asset("FE_asset/image/img1.jpg") }}" alt="" />
+                </a>
+                <div class="featured-title">
+                    <header>
+                        <a href="#">
+                            <h3>Đây là tiêu đề đố</h3>
+                        </a>
+                        <div class="featured-post-info">
+                            <a href="#">
+                                <span class="post-author">Đăng Nam</span>
+                                <span class="post-cates">Beatytull</span>
+                            </a>
+                        </div>
+                    </header>
+                    <p class="post-content-featured">
+                        “We’re never taught how to navigate the world of medicine from
+                        the patient seat.”
+                    </p>
                 </div>
             </div>
         </div>
-    </footer>
+        <div class="laster-post">
+            <div class="laster-header">
+                <h2>Bài viết mới nhất</h2>
+            </div>
+            <ul>
+                <li class="post-list cart">
+                    <a class="post-list-cates" href="#"> Cuộc Sống </a>
+                    <div class="post-list-container hover-post">
+                        <a href="#">
+                            <img src="{{ asset("FE_asset/image/deep.jpg") }}" alt="" />
+                        </a>
+                        <div class="post-list-content">
+                            <header>
+                                <a href="#">
+                                    <h3>Đây tiếp tục lại là 1 cái tiêu đề</h3>
+                                </a>
+                                <div class="post-list-info">
+                                    <a href="#">
+                                        <span class="post-author">Đăng Nam</span>
+                                        <span class="post-time">AUGUST 6, 2021</span>
+                                    </a>
+                                </div>
+                            </header>
+                            <p class="post-content">
+                                I first noticed redness and a few scales on my elbows at the
+                                start of my freshman year in college. My mom took me to a
+                                dermatologist and the diagnosis was swift: I had ...
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="post-list cart">
+                    <a class="post-list-cates" href="Page.html"> Trò Chơi</a>
+                    <div class="post-list-container hover-post">
+                        <a href="#">
+                            <img src="{{ asset("FE_asset/image/genshin.jpg") }}" alt="" />
+                        </a>
+                        <div class="post-list-content">
+                            <header>
+                                <a href="Post.html">
+                                    <h3>Đây tiếp tục lại là 1 cái tiêu đề</h3>
+                                </a>
+                                <div class="post-list-info">
+                                    <a href="#">
+                                        <span class="post-author">Đăng Nam</span>
+                                        <span class="post-time">AUGUST 6, 2021</span>
+                                    </a>
+                                </div>
+                            </header>
+                            <p class="post-content">
+                                I first noticed redness and a few scales on my elbows at the
+                                start of my freshman year in college. My mom took me to a
+                                dermatologist and the diagnosis was swift: I had ...
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="post-list cart">
+                    <a class="post-list-cates" href="#"> Học đường </a>
+                    <div class="post-list-container hover-post">
+                        <a href="#">
+                            <img src="{{ asset("FE_asset/image/hp.jpg") }}" alt="" />
+                        </a>
+                        <div class="post-list-content">
+                            <header>
+                                <a href="#">
+                                    <h3>Đây tiếp tục lại là 1 cái tiêu đề</h3>
+                                </a>
+                                <div class="post-list-info">
+                                    <a href="#">
+                                        <span class="post-author">Đăng Nam</span>
+                                        <span class="post-time">AUGUST 6, 2021</span>
+                                    </a>
+                                </div>
+                            </header>
+                            <p class="post-content">
+                                I first noticed redness and a few scales on my elbows at the
+                                start of my freshman year in college. My mom took me to a
+                                dermatologist and the diagnosis was swift: I had ...
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="post-list cart">
+                    <a class="post-list-cates" href="#"> Phim ảnh </a>
+                    <div class="post-list-container hover-post">
+                        <a href="#">
+                            <img src="{{ asset("FE_asset/image/penhous.jpg") }}" alt="" />
+                        </a>
+                        <div class="post-list-content">
+                            <header>
+                                <a href="#">
+                                    <h3>Đây tiếp tục lại là 1 cái tiêu đề</h3>
+                                </a>
+                                <div class="post-list-info">
+                                    <a href="#">
+                                        <span class="post-author">Đăng Nam</span>
+                                        <span class="post-time">AUGUST 6, 2021</span>
+                                    </a>
+                                </div>
+                            </header>
+                            <p class="post-content">
+                                I first noticed redness and a few scales on my elbows at the
+                                start of my freshman year in college. My mom took me to a
+                                dermatologist and the diagnosis was swift: I had ...
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-main">
+        <div class="logo-footer">
+            <img src="{{ asset("FE_asset/image/logo.png") }}" alt="" />
+        </div>
+    </div>
+</footer>
 </body>
 </html>

@@ -21,13 +21,13 @@ class CreatePostsTable extends Migration
             $table->text('content');
             $table->string('hot_news',50)->nullable();
            // $table->integer("slide_id")->nullable();
-            $table->integer("cate_id");
-            $table->integer("type_id");
-            $table->integer("user_id");
+            $table->bigInteger("cate_id");
+            $table->bigInteger("type_id");
+            $table->bigInteger("user_id");
             $table->timestamps();
         });
 
-        
+
     }
 
     /**
