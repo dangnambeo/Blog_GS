@@ -31,10 +31,11 @@ class PagesController extends Controller
     }
     //Xử lí giao diện trang chủ
     public function Index(){
+        $hot_new =Posts::all()->where('hot_new',0)->random();
         $post_all = Posts::orderBy('id','desc')->paginate(4);
         $hot = Category::with('posts')->where('status',1)->get();
        $post_cate = Posts::where('hot_news',0)->get();
-        return view('Pages.index',compact('hot','post_cate','post_all'));
+        return view('Pages.index',compact('hot_new','hot','post_cate','post_all'));
     }
     //Xử lý trang giao diện xem tất cả bài viết
     public function ViewPageAll(){

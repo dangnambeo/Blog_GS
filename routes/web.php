@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PagesController@Welcome');
+
 
 //Xử Lý Đăng Nhập Và Đăng Xuất
 Route::get('/dangki', 'UserController@getSignUp')->name('dangki');
@@ -99,7 +99,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 //Giao diện front-end
 Route::group(['prefix' => '/'], function () {
-    Route::get('/Trang-chu', 'PagesController@Index')->name('index');
+    Route::get('/t', 'PagesController@Index')->name('index');
     Route::get('/viewall', 'PagesController@ViewPageAll')->name('viewall');
     Route::get('/chuyen-muc/{cate_id}', 'PagesController@ViewPageCate')->name('viewcate');
     Route::get('/loai-tin/{cate_id}', 'PagesController@ViewPageType')->name('viewtype');

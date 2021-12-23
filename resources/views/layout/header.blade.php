@@ -7,19 +7,21 @@
             <div class="navigation">
                 <ul class="nav-menu">
                     <li class="menu-item">
-                        <a href="#" class="item-link">Trang Chủ</a>
+                        <a href="{{ route('index') }}" class="item-link">Trang Chủ</a>
                     </li>
                     @if(!empty($cates))
                         @foreach($cates as $cate)
                             <li class="menu-item">
                                 <a href="{{ route('viewcate',$cate->cate_id) }}" class="item-link">{{ $cate -> cate_tittle }}</a>
-                                <ul class="sub-menu-item">
+                                @if(count($cate->type) > 0)
+                                <ul class="sub-menu">
                                     @foreach($cate->type as $types)
                                         <li class="sub-item">
                                             <a href="{{ route("viewtype",$types->type_id) }}" class="">{{ $types->type_tittle }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
+                                @endif
                             </li>
                         @endforeach
                     @endif
