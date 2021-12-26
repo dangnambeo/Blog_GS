@@ -99,7 +99,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 //Giao diện front-end
 Route::group(['prefix' => '/'], function () {
-    Route::get('/t', 'PagesController@Index')->name('index');
+    Route::get('/', 'PagesController@Index')->name('index');
     Route::get('/viewall', 'PagesController@ViewPageAll')->name('viewall');
     Route::get('/chuyen-muc/{cate_id}', 'PagesController@ViewPageCate')->name('viewcate');
     Route::get('/loai-tin/{cate_id}', 'PagesController@ViewPageType')->name('viewtype');
