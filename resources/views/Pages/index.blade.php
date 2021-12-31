@@ -9,7 +9,7 @@
         @foreach ($hot_new as $news)
             <div class="featured-content hover-post">
                 <a href="#">
-                    
+                    <img src="{{ asset($news->img_post) }}" alt="" />
                 </a>
                 <div class="featured-title">
                     <header>
@@ -45,7 +45,7 @@
                         <div class="post-list-content">
                             <header>
                                 <a href="#">
-                                    <h3>{{ $new_post->title }}</h3>
+                                    <h3>{{ $new_post->tittle }}</h3>
                                 </a>
                                 <div class="post-list-info">
                                     <a href="#">
@@ -63,85 +63,6 @@
                     </div>
                 </li>
             @endforeach
-
-            <li class="post-list cart">
-                <a class="post-list-cates" href="Page.html"> Trò Chơi</a>
-                <div class="post-list-container hover-post">
-                    <a href="#">
-                        <img src="image/genshin.jpg" alt="" />
-                    </a>
-                    <div class="post-list-content">
-                        <header>
-                            <a href="Post.html">
-                                <h3>Đây tiếp tục lại là 1 cái tiêu đề</h3>
-                            </a>
-                            <div class="post-list-info">
-                                <a href="#">
-                                    <span class="post-author">Đăng Nam</span>
-                                    <span class="post-time">AUGUST 6, 2021</span>
-                                </a>
-                            </div>
-                        </header>
-                        <p class="post-content">
-                            I first noticed redness and a few scales on my elbows at the
-                            start of my freshman year in college. My mom took me to a
-                            dermatologist and the diagnosis was swift: I had ...
-                        </p>
-                    </div>
-                </div>
-            </li>
-            <li class="post-list cart">
-                <a class="post-list-cates" href="#"> Học đường </a>
-                <div class="post-list-container hover-post">
-                    <a href="#">
-                        <img src="imaged/hp.jpg" alt="" />
-                    </a>
-                    <div class="post-list-content">
-                        <header>
-                            <a href="#">
-                                <h3>Đây tiếp tục lại là 1 cái tiêu đề</h3>
-                            </a>
-                            <div class="post-list-info">
-                                <a href="#">
-                                    <span class="post-author">Đăng Nam</span>
-                                    <span class="post-time">AUGUST 6, 2021</span>
-                                </a>
-                            </div>
-                        </header>
-                        <p class="post-content">
-                            I first noticed redness and a few scales on my elbows at the
-                            start of my freshman year in college. My mom took me to a
-                            dermatologist and the diagnosis was swift: I had ...
-                        </p>
-                    </div>
-                </div>
-            </li>
-            <li class="post-list cart">
-                <a class="post-list-cates" href="#"> Phim ảnh </a>
-                <div class="post-list-container hover-post">
-                    <a href="#">
-                        <img src="image/penhous.jpg" alt="" />
-                    </a>
-                    <div class="post-list-content">
-                        <header>
-                            <a href="#">
-                                <h3>Đây tiếp tục lại là 1 cái tiêu đề</h3>
-                            </a>
-                            <div class="post-list-info">
-                                <a href="#">
-                                    <span class="post-author">Đăng Nam</span>
-                                    <span class="post-time">AUGUST 6, 2021</span>
-                                </a>
-                            </div>
-                        </header>
-                        <p class="post-content">
-                            I first noticed redness and a few scales on my elbows at the
-                            start of my freshman year in college. My mom took me to a
-                            dermatologist and the diagnosis was swift: I had ...
-                        </p>
-                    </div>
-                </div>
-            </li>
         </ul>
     </div>
 @endsection

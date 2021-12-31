@@ -17,8 +17,10 @@ class CreateUserTable extends Migration
             $table->bigIncrements('user_id');
             $table->string('full_name',50);
             $table->string('user_name',50);
+            $table->string('email',150)->nullable();
             $table->string('avatar',250)->nullable();
-            $table->string('level',50);
+            $table->string('mota',250)->nullable();
+            $table->bigInteger('role_id');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

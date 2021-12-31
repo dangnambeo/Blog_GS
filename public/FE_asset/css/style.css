@@ -73,7 +73,7 @@ li.menu-item ul.sub-menu {
     z-index: 1000;
     position: absolute;
     padding: 15px;
-    background: #fff;
+    background: #E0E0E0;
     width: max-content;
     top: 71px;
     left: 0;
@@ -82,6 +82,7 @@ li.menu-item ul.sub-menu {
 
 ul.sub-menu::before {
     content: "";
+
     width: 100%;
     height: 20px;
     position: absolute;
@@ -90,11 +91,12 @@ ul.sub-menu::before {
 }
 ul.sub-menu::after {
     content: "";
+
     width: 0;
     height: 0;
     border-style: solid;
     border-width: 0 6px 6px 6px;
-    border-color: transparent transparent #fff transparent;
+    border-color: transparent transparent #E0E0E0 transparent;
     position: absolute;
     left: 20px;
     top: -6px;
@@ -379,7 +381,7 @@ ul.sub-menu li.sub-item a:hover {
 .titlebar h1 {
     border-right: 0.125rem solid #666;
     display: inline-block;
-    font-size: 2.75rem;
+    font-weight: bold;
     max-height: 2.5rem;
     padding-right: 0.9375rem;
     text-transform: uppercase;
@@ -390,7 +392,7 @@ ul.sub-menu li.sub-item a:hover {
 }
 .titlebar h2 {
     display: inline-block;
-    font-size: 2.75rem;
+
     font-weight: bold;
     margin: 0 auto;
     max-width: 28rem;
@@ -436,9 +438,16 @@ ul.sub-menu li.sub-item a:hover {
     margin-right: 0.625rem;
     padding: 15px;
 }
+.list-cates .blog-list-cate ul li:hover{
+    background-color: #673AB7;
+}
 .list-cates .blog-list-cate ul li a {
     text-decoration: none;
     color: #636e72;
+}
+.list-cates .blog-list-cate ul li:hover a{
+    color: #fff;
+    font-weight: bold;
 }
 .list-cates .blog-list-cate ul li.active {
     background-color: #0984e3;
@@ -597,7 +606,7 @@ ul.sub-menu li.sub-item a:hover {
 /* Footer */
 
 .footer {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 50px;
     bottom: 0;

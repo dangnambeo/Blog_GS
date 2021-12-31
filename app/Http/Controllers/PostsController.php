@@ -13,11 +13,7 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    function __construct()
-    {
-        $type = TypeCate::all();
-        view()->share('type', $type);
-    }
+
     public function ListPost()
     {
         $post = Posts::where('user_id', Auth::user()->user_id)->get();

@@ -26,8 +26,6 @@ class CreatePostsTable extends Migration
             $table->bigInteger("user_id");
             $table->timestamps();
         });
-
-
     }
 
     /**
